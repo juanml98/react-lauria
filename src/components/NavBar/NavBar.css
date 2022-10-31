@@ -1,0 +1,56 @@
+nav {
+    background-color: rgb(31, 30, 30);
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 75px;
+    align-items: center;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, .6);
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    font-size: 17px;
+}
+
+.menu a:hover { 
+    background-color: rgb(226, 115, 11);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.menu li {
+    font-size: 16px;
+    padding: 15px 15px;
+    margin: 0 10px;
+    display: block;
+}
+
+.menu li a {
+    display: block;
+}
+
+.logo {
+    font-size: 35px;
+    padding: 0 80px;
+}
+
+.carrito {
+    padding: 0 80px;
+    margin-top: 20px;
+    padding: 0 40px;
+}
