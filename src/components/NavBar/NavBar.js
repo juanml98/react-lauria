@@ -1,31 +1,31 @@
 import React from 'react';
 import CartWidget from '../cartWidget/cartWidget';
 import './NavBar.css';
+import { Link } from 'react-router-dom';
 
 
 
 function NavBar () {
     return (
              
-        <nav>
+        <nav className='navbar'>
             
-        <div className='menu'>
-            
-            <h1 className='logo'>iCoder</h1>
-            
-            <ul>   
-                <li>
-                <a href='/'>iPhone</a>
-                </li>
-                <li>
-                <a href='/'>iPad</a>
-                </li>
-                <li>
-                <a href='/'>Accesorios</a>
-                </li>
-                <li>
-                <a href='/'>Contacto</a>
-                </li>
+            <div style={{padding: '45px'}}>
+                <Link to='/' className='logo'><h1>iCoder</h1></Link>
+            </div>
+
+        <div className='nav-menu'>
+               
+            <div className='nav-listado'>   
+                
+                <Link to='/category/iPhone' className='listado-hijo' >iPhone</Link>
+                
+                <Link to='/category/iPad' className='listado-hijo' >iPad</Link>
+                
+                <Link to='/category/accesorios' className='listado-hijo' >Accesorios</Link>
+                
+                <Link to='/contacto/' className='listado-hijo' >Contacto</Link>
+        
 
                 <div className='carrito'>
 
@@ -33,7 +33,7 @@ function NavBar () {
                 
                 </div>
             
-            </ul>
+            </div>
         </div>
             
         </nav>
