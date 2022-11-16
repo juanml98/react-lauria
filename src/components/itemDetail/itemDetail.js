@@ -2,25 +2,34 @@ import React from "react";
 import ItemCount from "../itemCount/itemCount";
 import "./itemdetail.css";
 
-const ItemDetail = (products) => {
-    
-    
+function ItemDetail (product)  {
+
     return (
-        <div className="card">
+        <div className="card" key={product.id}>
+
             <div className="card-img">
-            <img src={products.img} alt=""/>
+            
+            <img src={product.img} alt=""/>
+            
             </div>
+
             <div className="card-detail">
-            <h3>{products.title}</h3>
-            <h5>{products.detalle}</h5>
-            <p>${products.price}</p>
+            
+            <h3>{product.title}</h3>
+            
+            <h5>{product.detalle}</h5>
+            
+            <p>${product.price}</p>
+            
             </div>
 
             <div>
+
             <ItemCount 
-            stock={products.stock} 
+            stock={product.stock} 
             initial={1}
             onAdd={(n) => alert (`Se han añadido ${n} productos`)}/>
+            
             </div>
         </div>
     );

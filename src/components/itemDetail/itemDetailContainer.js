@@ -3,10 +3,11 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "./itemDetail";
 import { getItemById } from "../../promises/mockService";
 
-function ItemDetailContainer () {
+const ItemDetailContainer = () => {
 
     const [product, setProduct] = useState([]);
-    const {idItem} = useParams();
+    
+    const {id} = useParams();
 
     
     /*async function getItemsAsync() {
@@ -19,14 +20,16 @@ function ItemDetailContainer () {
     }, []);*/
     
     useEffect(() => {
-        getItemById(idItem).then(response => {
+        getItemById(id).then(response => {
         setProduct(response)
     })
     },[]);
 
 
     return(
-           <ItemDetail product={product}/>
+        <div>
+           <ItemDetail {...product}/>
+        </div>
     );
 };
 

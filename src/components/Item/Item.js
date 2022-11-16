@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Item({title, img, price, id}) {
     
     return (
-        <div className="card">
+        <div className="card" key={id}>
             <div className="card-img">
             <img src={img} alt={title}/>
             </div>

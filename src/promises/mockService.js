@@ -8,10 +8,10 @@ const getItems = () => {
     })
 }
 
-export const getItemById = (idParam) =>{
+export const getItemById = (id) =>{
     return new Promise ((resolve) =>{
         setTimeout(()=>{
-            resolve(products.find(item => item.id === idParam))
+            resolve(products.find(prod => prod.id === Number(id)))
         }, 500)
     })
 
