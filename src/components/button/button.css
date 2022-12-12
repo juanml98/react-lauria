@@ -1,0 +1,9 @@
+.botonIncDec{
+    width: 3vw;
+    text-align: center;
+    border-radius: 20%;
+    border-style: none;
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+}

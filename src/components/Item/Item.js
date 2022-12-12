@@ -3,7 +3,7 @@ import "./item.css"
 
 import { Link } from "react-router-dom";
 
-function Item({title, img, price, id}) {
+function Item({title, img, price, discount, id}) {
     
     return (
         <div className="card" key={id}>
@@ -12,7 +12,8 @@ function Item({title, img, price, id}) {
             </div>
             <div className="card-detail">
             <h3>{title}</h3>
-            <p>${price}</p>
+            { discount && <small>¡Aprovecha nuestro descuento navideño!</small>}
+            <p style={ { color: discount && "green" }}>${price}</p>
             </div>
 
             <Link to={`/detail/${id}`}>

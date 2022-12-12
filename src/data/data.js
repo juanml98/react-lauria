@@ -22,6 +22,7 @@ const products = [
     "title": "iPhone 8",
     "price": 1800,
     "category": "iPhone",
+    "discount":20,
     "detalle":"Capacidad: 64GB. Pantalla widescreen LCD Multi-Touch de 4.7 pulgadas con tecnología IPS. Sistema de cámara única de 12 MP: gran angular. Grabación de video 4K.",
     "stock": 12,
     "img": "https://http2.mlstatic.com/D_NQ_NP_770422-MLA50638694136_072022-V.jpg"
@@ -40,6 +41,7 @@ const products = [
     "title": "iPhone 12",
     "price": 3900,
     "category": "iPhone",
+    "discount":15,
     "detalle":"Capacidad: 128GB. Pantalla Super Retina XDR. Sistema de dos cámaras de 12 MP. Grabación de video HDR en Dolby Vision hasta 4K a 30 cps.",
     "stock": 3,
     "img": "https://www.mylshop.com.ar/wp-content/uploads/2022/03/apple-iphone-12-128gb-verde.jpg"
@@ -85,6 +87,7 @@ const products = [
     "title": "iPhone 7 Plus",
     "price": 1200,
     "category": "iPhone",
+    "discount":15,
     "detalle":"Capacidad: 64GB. Pantalla Retina HD. Cámara dual de 12 Mpx con gran angular y teleobjetivo. Grabación de vídeo en 4K a 30 f/s.",
     "stock": 11,
     "img": "https://http2.mlstatic.com/D_NQ_NP_823783-MLA31182385788_062019-O.jpg"
@@ -112,6 +115,7 @@ const products = [
     "title": "Apple Watch",
     "price": 2000,
     "category": "accesorios",
+    "discount":20,
     "detalle":"GPS, brújula y altímetro siempre activo. Sensor óptico de frecuencia cardiaca de tercera generación. Resistente al agua hasta 50 metros.",
     "stock": 4,
     "img": "https://http2.mlstatic.com/D_NQ_NP_680367-MLA46346545059_062021-V.jpg"

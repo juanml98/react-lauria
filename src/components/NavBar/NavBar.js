@@ -27,11 +27,11 @@ function NavBar () {
                 <Link to='/contacto/' className='listado-hijo' >Contacto</Link>
         
 
-                <div className='carrito'>
+                <Link to='/cart/' className='carrito'>
 
                 <CartWidget />
                 
-                </div>
+                </Link>
             
             </div>
         </div>

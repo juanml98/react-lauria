@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import Item from "../Item/Item";
-import getItems from "../../promises/mockService";
-import { getItemsByCategory } from "../../promises/mockService";
+import getItems from "../../promises/firestore";
+import { getItemsByCategory } from "../../promises/firestore";
 import "./itemlist.css"
 import { useParams } from "react-router-dom";
 
@@ -10,6 +10,8 @@ function ItemListContainer () {
     const [products, setProducts] = useState([]);
 
     const {category} = useParams();
+
+
 
     /* async function getItemsAsync() {
         let respuesta = await getItems();
@@ -29,23 +31,26 @@ function ItemListContainer () {
         }
     }, [category])
 
+
     return(
+
         <div className="item-list">
-            {
+            { 
                 products.map( (product) => {
                     return (
                         <Item 
                         key={product.id}
                         id={product.id}
                         title={product.title}
+                        discount={product.discount}
                         price={product.price}
                         img={product.img}
                         />
  
                     )
                 })
-            }
-        </div>
+             }
+        </div> 
     );
 }
 
