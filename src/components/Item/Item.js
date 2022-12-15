@@ -1,7 +1,7 @@
 import React from "react";
 import "./item.css"
-
 import { Link } from "react-router-dom";
+import Boton from "../mybutton/mybutton";
 
 function Item({title, img, price, discount, id}) {
     
@@ -17,7 +17,7 @@ function Item({title, img, price, discount, id}) {
             </div>
 
             <Link to={`/detail/${id}`}>
-            <button variant="primary">Ver más</button>
+            <Boton>Ver más</Boton>
            </Link>
         </div>
     );

@@ -4,20 +4,18 @@ import "./itemdetail.css";
 import { useContext, useState } from "react";
 import cartContext from "../../context/cartContext";
 import { Link } from "react-router-dom";
+import Boton from "../mybutton/mybutton";
 
 
 const ItemDetail = ({id, title, stock, img, detalle, price, cantidad}) => {
 
-    const [quantity, setQuantity] = useState(0);
+    const [isInCart, setIsInCart] = useState(0);
 
-    const {addItem, getProduct } = useContext(cartContext)
+    const {addItem} = useContext(cartContext)
 
-    const onAdd = (cantidad) =>{
-        if(cantidad > 0){
-            console.log("todo joya");
-            setQuantity(cantidad);
-            addItem({id, title, stock, img, detalle, price, cantidad})
-        }
+    function onAdd (count) {
+        setIsInCart(count);
+        addItem({id, title, stock, img, detalle, price, count})
     }
     
 
@@ -40,16 +38,16 @@ const ItemDetail = ({id, title, stock, img, detalle, price, cantidad}) => {
             
             </div>
 
-            <div>
-           
+            {isInCart ? (
+                <Link to="/cart"><Boton>Ir al carrito</Boton></Link>
+            ) : (
+             
             <ItemCount 
             stock={stock} 
-            initial={getProduct(id)?.quantity}
-            onAdd={onAdd}/>
+            onAdd={onAdd}/> 
             
-            <Link to="/cart"><button>Ir al carrito</button></Link>
-                
-            </div>
+            )}    
+
         </div>
     );
 }

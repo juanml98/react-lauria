@@ -1,5 +1,51 @@
+.container{
+    color: rgb(255, 255, 255);
+    flex-direction: row; 
+
+}
+  
+.cart-list {
+    display: flex; 
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.item{  
+    position: relative;
+    color: rgb(49, 49, 48);
+    background-color: rgb(235, 232, 230);
+    margin: 10px 15px;
+    min-height: 400px;
+    width: 260px;
+    height: 100%;
+    border-radius: 4px;
+    box-shadow: 0px 0px 4px rgb(32, 32, 32);
+    overflow: hidden;    
+    padding: 20px 10px; 
+}
+  
+.item img{
+    object-fit: contain;
+    max-width: 300px;
+}
+
+.cartForm{
+    margin: 50px;
+    background-color: rgba(36, 33, 33, 0.753);
+    box-shadow: 2px 3px 21px 23px rgba(0,0,0,0.75);
+    padding: 10px;
+}
+
+.cartForm input{
+    font-family: 'Montserrat', sans-serif;
+    margin: 20px;
+    height: 30px;
+    text-align: center;
+    border-radius: 8px;
+}
+
 .totalCompra{
-    margin: 50px 0px;
+    margin: 50px 50px;
     background-color: rgba(0, 0, 0, 0.953);
     box-shadow: 2px 3px 21px 23px rgba(0,0,0,0.95);
 }
@@ -11,50 +57,51 @@
     color: white;
 }
 
-.orderGeneratorContainer{
-    margin-top: 20px;
-    text-align: center;
+
+.button-15 {
+  background-image: linear-gradient(#5eec42, #00c911);
+  border: 1px solid #00a000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  direction: ltr;
+  display: block;
+  font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  margin: 25px;
+  padding: 10px 25px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
 }
 
-.orderGeneratorContainer button{
-    font-family: 'Montserrat', sans-serif;
-    margin: 5px 0;
-    border: none;
-    border-radius: 16px;
-    padding: 12px;
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    box-shadow:  1px 7px 4px -2px rgba(197, 192, 192, 0.75);
+.button-15:disabled {
+  cursor: default;
+  opacity: .3;
 }
 
-.orderGeneratorContainer button:hover{
-    box-shadow: 1px 7px 24px 3px rgba(197, 192, 192, 0.767);
-    transition: 0.1s;
+.button-15:hover {
+  background-image: linear-gradient(#51A9EE, #147BCD);
+  border-color: #1482D0;
+  text-decoration: none;
 }
 
-.CartItemContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.button-15:active {
+  background-image: linear-gradient(#3D94D9, #0067B9);
+  border-color: #006DBC;
+  outline: none;
 }
 
-.Cart{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.button-15:focus {
+  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+  outline: none;
 }
 
-.Cart p{
-    font-size: 3em;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.753);
-    box-shadow: 2px 3px 21px 23px rgba(0,0,0,0.75);
-}
-
-form{
-    display: flex;
-    flex-direction: column;
-}

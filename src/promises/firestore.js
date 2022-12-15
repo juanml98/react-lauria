@@ -62,13 +62,14 @@ export async function getItemsByCategory(category){
 
 export async function createOrder(order){
   
-  const collectionRef = collection(DB, "orders")
+  const collectionRef = collection(DB, "orden creada")
   
   const docOrder = await addDoc(collectionRef, order)
+  console.log(docOrder.id);
   return docOrder.id;
 }
 
-export async function exportArrayToFirestore(){
+/* export async function exportArrayToFirestore(){
   const products = [
     {
         "id": 1,
@@ -218,5 +219,6 @@ export async function exportArrayToFirestore(){
     console.log("documento hecho", docOrder.id)
   }
 
-}
+}*/
+
 

@@ -1,59 +1,67 @@
 import './cart.css'
 import { useContext } from "react";
 import cartContext from '../../context/cartContext';
-import { createOrder, exportArrayToFirestore } from '../../promises/firestore';
+import FormularioComprador from '../formulario/formulario';
+import { createOrder } from '../../promises/firestore';
 import { useNavigate } from 'react-router-dom';
 
 function Cart () {
 
-    const { cart, removeItem, priceInCart } = useContext(cartContext)
+    const { cart, getTotal, removeItem, cleanCart } = useContext(cartContext)
     
-    let navigate = useNavigate();
+    const totalCompra = getTotal();
+    const navigate = useNavigate();
 
     if (cart.length === 0) return <h1>Su carrito está vacío 😥</h1>
     
 
-    async function handleCheckout(evt){
+    async function handleCheckout(evt, data){
+        
         const order = {
-            buyer: {
-                name:"juan",
-                email:"hola456@gmail.com",
-                phone:"22132435"
-            },
-            products: [],
+            buyer: data,
+            products: cart,
             total: 0,
             date:new Date(),
         };
         
-        const orderId = createOrder(order);
-        navigate(`/gracias/${orderId}`);
+        const orderId = await createOrder(order);
+        navigate(`/ordenfinalizada/${orderId}`);
     }
 
     return(
-        <div className='cartItemContainer'>
             <div>
-                {cart.map(product => {
-                    return(
-                        <div key={product.id} className='Cart'>
-                            <img src={product.img} alt={''}/>
-                            <h2>{product.name}</h2>
-                            <div>{product.count}</div>
-                            <div className='totalCompra'>Precio: ${product.price}</div>
+                <div className='container'>
+                <h1>Carrito:</h1>
+                <div className='cart-list'>
+                {cart.map((product) => (
+                       <div className='item' key={product.id}>
+                            <img variant="top" style={{width: 250, height: 250}} src={product.img} alt={''}/>
 
-                            <div className='orderGeneratorContainer'>
-                                <button onClick={createOrder}>Generar orden</button>
+                            
+                                <h2>{product.title}</h2>
+                                
+                                <h3>Precio: ${product.price}</h3>
+                                <p>Unidades: {product.count}</p>
+                                <h4>Subtotal: ${product.price*product.count}</h4>
+                                
+                                <button className="button-3" onClick={() => removeItem(product.id)} style={{color:"red"}}>Eliminar</button>
+
                             </div>
-
-                            <button onClick={() => removeItem(product.id)} style={{color:"red"}}>Eliminar</button>
-                        
-                        </div>
-                    )})
+                        ))
                 }
+            
             </div>
-
-            <button onClick={handleCheckout}>Finalizar compra</button>
+            </div>
+            
+            <div className='totalCompra'>
+                    <h3>Total: ${totalCompra}</h3>
+            </div>
+            
+            <FormularioComprador onSubmit={handleCheckout}/>
+            <button className="button-1" style={{marginBottom:'20px'}} onClick={() => cleanCart()}>Vaciar carrito</button>
         </div>
-    )
-}
+        
+        
+)}
 
 export default Cart;

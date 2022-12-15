@@ -22,7 +22,7 @@ function App() {
         <Route path='/detail/:id' element={<ItemDetailContainer />}/>
         
         <Route path='/cart/' element={<Cart/>}/>
-        <Route path='/gracias/:orderId' element={<Gracias/>}/>
+        <Route path='/ordenfinalizada/:idOrder' element={<Gracias/>}/>
         <Route path='*' element={<h1>Error 404: Esta página no existe 😞</h1>}/>
         <Route path='/contacto/' element={<h1>Estamos trabajando en esta página... 🛠</h1>}/>
         <Route />
